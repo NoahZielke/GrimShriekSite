@@ -1,0 +1,138 @@
+:root {
+  color-scheme: dark;
+  --vscode-bg: #1e1e1e;
+  --vscode-panel: #252526;
+  --vscode-border: #3c3c3c;
+  --vscode-text: #f5f5f5;
+  --vscode-muted: #b3b3b3;
+  --grim-red: #d14045;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: var(--vscode-bg);
+  color: var(--vscode-text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.hero {
+  min-height: 72vh;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--vscode-border);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(209, 64, 69, 0.16), transparent 35%),
+    linear-gradient(rgba(30, 30, 30, 0.82), rgba(30, 30, 30, 0.98)),
+    url("assets/grimshriek-gameplay-01.png") center / cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 100% 4px;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: min(760px, 90vw);
+  max-height: 310px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.65));
+}
+
+.eyebrow {
+  color: var(--grim-red);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero .lead {
+  max-width: 650px;
+  color: var(--vscode-muted);
+}
+
+.release-badge {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--grim-red);
+  border-radius: 0.25rem;
+  background: rgba(209, 64, 69, 0.1);
+  color: var(--vscode-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.platform-note {
+  color: var(--vscode-muted);
+  font-size: 0.95rem;
+}
+
+.screenshots {
+  background: var(--vscode-panel);
+}
+
+.shot-card {
+  overflow: hidden;
+  border: 1px solid var(--vscode-border);
+  border-bottom: 3px solid var(--grim-red);
+  border-radius: 0.25rem;
+  background: #181818;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.shot-card img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.shot-card:hover img {
+  transform: scale(1.015);
+}
+
+footer {
+  border-top: 1px solid var(--vscode-border);
+  background: #181818;
+  color: var(--vscode-muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+footer span {
+  color: var(--grim-red);
+}
+
+@media (max-width: 576px) {
+  .hero {
+    min-height: 64vh;
+  }
+
+  .release-badge {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shot-card img {
+    transition: none;
+  }
+}
