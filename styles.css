@@ -117,6 +117,11 @@ footer span {
   color: var(--grim-red);
 }
 
+footer sup {
+  margin-left: 0.12em;
+  font-size: 0.55em;
+}
+
 @media (max-width: 576px) {
   .hero {
     min-height: 64vh;
