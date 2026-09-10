@@ -26,8 +26,7 @@ body {
   border-bottom: 1px solid var(--vscode-border);
   background:
     radial-gradient(circle at 50% 35%, rgba(209, 64, 69, 0.16), transparent 35%),
-    linear-gradient(rgba(30, 30, 30, 0.82), rgba(30, 30, 30, 0.98)),
-    url("assets/grimshriek-gameplay-01.png") center / cover;
+    var(--vscode-bg);
 }
 
 .hero::after {
